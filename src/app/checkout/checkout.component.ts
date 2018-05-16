@@ -18,7 +18,6 @@ export class CheckoutComponent implements OnInit {
   private product = new ProductsModel();
   private selected: any;
   private alert: boolean = false;
-  public saveUsername: boolean;
   private value: any
 
   private modalConfirm: BsModalRef;
