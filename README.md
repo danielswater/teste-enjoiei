@@ -12,4 +12,4 @@ Fazer o download das dependências do projeto com o comando " npm install "
 
 ## Testando o projeto
 
-Após a instalação das dependências, entrar na pasta raiz, aonde está localizado o server e entrar com o comando "node server ". Após inicializado o servidor, entrar com o comando "ng serve"
+Após a instalação das dependências, entrar na pasta raiz, aonde está localizado o server e entrar com o comando "node server ". Após inicializado o servidor, entrar com o comando "ng serve". Acessar a url: http://localhost:4200
