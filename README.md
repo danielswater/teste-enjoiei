@@ -6,10 +6,6 @@ Projeto realizado com o Angular CLI versão 1.2.6.
 
 Para rodar o projeto, é necessário a instalação do Angular CLI com a sua mais recente versão com o comando " npm install -g @angular/cli@latest "
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
 ## Instalando as dependências
 
 Fazer o download das dependências do projeto com o comando " npm install "
