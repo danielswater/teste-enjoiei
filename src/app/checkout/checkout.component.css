@@ -1,0 +1,119 @@
+.container {
+    width: 40%;
+    background-color: #fff;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.logo-container {
+    margin-bottom: 40px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.coupon-container {
+    margin-top: 50px
+}
+
+.coupon-container label:not(.label-pink) {
+    color: #7d7d7d;
+}
+
+label>strong {
+    color: #212529;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked+label,
+[type="radio"]:not(:checked)+label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #7d7d7d;
+}
+
+[type="radio"]:checked+label:before,
+[type="radio"]:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+
+[type="radio"]:checked+label:after,
+[type="radio"]:not(:checked)+label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #F05B78;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked)+label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="radio"]:checked+label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.label-pink {
+    color: #F05B78;
+}
+
+.buttons-container {
+    margin-top: 40px;
+    border-top: 1px solid #e2e2e2;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.btn-group-lg>.btn,
+.btn-lg {
+    padding: 0.5rem 3rem;
+}
+
+.buttons-container .btn-secondary {
+    background-color: #fff;
+    color: #F05B78;
+    border-color: #e2e2e2;
+}
+
+.buttons-container .btn-primary {
+    background-color: #F05B78;
+    border-color: #F05B78;
+}
+
+i {
+    font-size: 2.5em;
+}
+
+.modal-confirm i {
+    color: #6fcf67;
+}
+
+.modal-cancel i {
+    color: #f18f3e;
+}

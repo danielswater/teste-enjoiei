@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="col-md-12 text-center logo-container">
+        <a class="nav-link" href="#"><img src="../../assets/images/logo_03.png"></a>
+    </div>
+    <div class="col-md-12 text-center">
+        <img class="rounded" src="{{product.image}}" />
+    </div>
+    <div class="coupon-container col-md-12">
+        <alert *ngIf="alert" type="danger">
+            <strong>ocorreu um erro!</strong> selecione uma opção de cupom.
+        </alert>
+        <p><strong>cupons</strong></p>
+        <form>
+            <p>
+                <input (change)="changeCoupon(null)" type="radio" [(ngModel)]="selected" [value]="null" id="no_coupon" name="no_coupon">
+                <label for="no_coupon">não usar cupom</label>
+            </p>
+            <p *ngFor="let item of checkout.availableCoupons">
+                <input (change)="changeCoupon(item)" [(ngModel)]="selected" [value]="item.id" type="radio" id="coupon" name="coupon">
+                <label for="coupon">{{item.title}}</label>
+                <label class="float-right label-pink">- {{item.discount | currency:'BRL':true}}</label>
+            </p>
+        </form>
+        <p><strong>resumo</strong></p>
+        <label>valor original</label>
+        <label class="float-right">{{product.price | currency:'BRL':true}}</label>
+        <div *ngFor="let item of checkout.availableCoupons">
+            <label>cupom</label>
+            <label class="float-right label-pink">- {{item.discount | currency:'BRL':true}}</label>
+        </div>
+        <div>
+            <label>frete</label>
+            <label class="float-right">{{checkout.shippingPrice | currency:'BRL':true}}</label>
+        </div>
+        <div>
+            <label>total</label>
+            <label class="float-right"><strong>{{checkout.totalPrice | currency:'BRL':true}}</strong></label>
+        </div>
+    </div>
+    <div class="col-md-12 buttons-container">
+        <button type="button" (click)="openModalCancel(templateCancel)" class="btn btn-secondary btn-lg">cancelar</button>
+        <button type="button" (click)="openModalConfirm(templateConfirm)" class="float-right btn btn-primary btn-lg">confirmar</button>
+    </div>
+</div>
+
+<!-- MODALS -->
+
+<!-- MODAL CONFIRM -->
+<ng-template #templateConfirm>
+    <div class="modal-header">
+        <div class="col-md-12 modal-confirm text-center">
+            <i class="fa fa-cart-arrow-down"></i>
+        </div>
+    </div>
+    <div class="modal-body text-center">
+        <p><strong>compra confirmada</strong></p>
+        <p>enviaremos atualizações sobre<br /> o pedido para o seu email</p>
+    </div>
+</ng-template>
+
+<ng-template #templateCancel>
+    <div class="modal-header">
+        <div class="col-md-12 modal-cancel text-center">
+            <i class="fa fa-cart-arrow-down"></i>
+        </div>
+    </div>
+    <div class="modal-body text-center">
+        <p><strong>compra cancelada</strong></p>
+        <p>o pedido não foi enviado<br /> e você não será cobrado</p>
+    </div>
+</ng-template>
